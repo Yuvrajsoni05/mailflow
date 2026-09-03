@@ -1,0 +1,31 @@
+{# NOTE: nav links use "#" for now — swap in {% url '...' %} once views/urls.py exist. #}
+{# Add class="active" (already applied per-page below via body-level context in real Django usage) #}
+<aside class="mf-sidebar" id="mfSidebar">
+    <nav class="nav flex-column">
+
+        <a class="nav-link active" href="#">
+            <i class="bi bi-speedometer2"></i> Dashboard
+        </a>
+
+        <div class="mf-nav-section">Leads</div>
+        <a class="nav-link" href="#"><i class="bi bi-people"></i> All Leads</a>
+        <a class="nav-link" href="#"><i class="bi bi-cloud-upload"></i> Upload Leads</a>
+        <a class="nav-link" href="#"><i class="bi bi-person-plus"></i> Add Lead</a>
+
+        <div class="mf-nav-section">Campaigns</div>
+        <a class="nav-link" href="#"><i class="bi bi-send"></i> All Campaigns</a>
+        <a class="nav-link" href="#"><i class="bi bi-plus-circle"></i> Create Campaign</a>
+
+        <div class="mf-nav-section">Email Templates</div>
+        <a class="nav-link" href="#"><i class="bi bi-file-earmark-text"></i> Templates</a>
+        <a class="nav-link" href="#"><i class="bi bi-file-earmark-plus"></i> Create Template</a>
+
+        <div class="mf-nav-section">Tracking</div>
+        <a class="nav-link" href="#"><i class="bi bi-graph-up-arrow"></i> Email Events</a>
+
+        <div class="mf-nav-section">Account</div>
+        <a class="nav-link" href="#"><i class="bi bi-person-circle"></i> Profile</a>
+        <a class="nav-link" href="#"><i class="bi bi-box-arrow-right"></i> Logout</a>
+
+    </nav>
+</aside>

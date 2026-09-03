@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Dashboard · MailFlow{% endblock %}
+
+{% block content %}
+
+<div class="mf-page-header">
+    <div>
+        <h1>Dashboard</h1>
+        <p>Here's what's happening across your campaigns.</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a href="#" class="btn btn-mf-outline btn-sm"><i class="bi bi-people me-1"></i> View Leads</a>
+        <a href="#" class="btn btn-mf-primary btn-sm"><i class="bi bi-plus-lg me-1"></i> Create Campaign</a>
+    </div>
+</div>
+
+<!-- Stat cards -->
+<div class="row g-3 mb-4">
+    <div class="col-6 col-lg-3">
+        <div class="mf-stat-card d-flex justify-content-between align-items-start">
+            <div>
+                <div class="mf-stat-label">Total Leads</div>
+                <div class="mf-stat-value">1,250</div>
+                <div class="mf-stat-delta text-success"><i class="bi bi-arrow-up-short"></i> 8.2% this month</div>
+            </div>
+            <span class="mf-stat-icon"><i class="bi bi-people-fill"></i></span>
+        </div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <div class="mf-stat-card d-flex justify-content-between align-items-start">
+            <div>
+                <div class="mf-stat-label">Total Campaigns</div>
+                <div class="mf-stat-value">24</div>
+                <div class="mf-stat-delta text-success"><i class="bi bi-arrow-up-short"></i> 3 new</div>
+            </div>
+            <span class="mf-stat-icon"><i class="bi bi-send-fill"></i></span>
+        </div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <div class="mf-stat-card d-flex justify-content-between align-items-start">
+            <div>
+                <div class="mf-stat-label">Emails Sent</div>
+                <div class="mf-stat-value">8,420</div>
+                <div class="mf-stat-delta mf-muted">last 30 days</div>
+            </div>
+            <span class="mf-stat-icon"><i class="bi bi-envelope-fill"></i></span>
+        </div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <div class="mf-stat-card d-flex justify-content-between align-items-start">
+            <div>
+                <div class="mf-stat-label">Open Rate</div>
+                <div class="mf-stat-value">42.5%</div>
+                <div class="mf-stat-delta text-success"><i class="bi bi-arrow-up-short"></i> 2.1% vs avg</div>
+            </div>
+            <span class="mf-stat-icon"><i class="bi bi-envelope-open-fill"></i></span>
+        </div>
+    </div>
+</div>
+
+<!-- Chart -->
+<div class="mf-card p-3 p-md-4 mb-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h2 class="h6 mb-0">Email Activity</h2>
+            <p class="mf-muted small mb-0">Sent, opened and clicked over the last 30 days</p>
+        </div>
+    </div>
+    <div style="height: 260px;">
+        <canvas id="mfActivityChart"></canvas>
+    </div>
+</div>
+
+<!-- Recent campaigns -->
+<div class="mf-table-card">
+    <div class="d-flex justify-content-between align-items-center p-3 border-bottom">
+        <h2 class="h6 mb-0">Recent Campaigns</h2>
+        <a href="#" class="small">View all <i class="bi bi-arrow-right"></i></a>
+    </div>
+    <div class="table-responsive">
+        <table class="table mf-table mb-0">
+            <thead>
+                <tr>
+                    <th>Campaign</th>
+                    <th>Recipients</th>
+                    <th>Sent</th>
+                    <th>Opened</th>
+                    <th>Clicked</th>
+                    <th>Bounced</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="mf-cell-strong">September Outreach</td>
+                    <td>125</td>
+                    <td>125</td>
+                    <td>68</td>
+                    <td>25</td>
+                    <td>5</td>
+                    <td><span class="mf-badge mf-badge-success">Completed</span></td>
+                </tr>
+                <tr>
+                    <td class="mf-cell-strong">Melbourne Leads</td>
+                    <td>340</td>
+                    <td>340</td>
+                    <td>151</td>
+                    <td>44</td>
+                    <td>12</td>
+                    <td><span class="mf-badge mf-badge-success">Completed</span></td>
+                </tr>
+                <tr>
+                    <td class="mf-cell-strong">Product Introduction</td>
+                    <td>512</td>
+                    <td>210</td>
+                    <td>76</td>
+                    <td>19</td>
+                    <td>3</td>
+                    <td><span class="mf-badge mf-badge-info">Sending</span></td>
+                </tr>
+                <tr>
+                    <td class="mf-cell-strong">August Follow-up</td>
+                    <td>198</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td><span class="mf-badge mf-badge-muted">Draft</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+{% endblock %}

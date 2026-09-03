@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Campaigns · MailFlow{% endblock %}
+
+{% block content %}
+
+<div class="mf-page-header">
+    <div>
+        <h1>Campaigns</h1>
+        <p>24 campaigns total.</p>
+    </div>
+    <a href="#" class="btn btn-mf-primary btn-sm"><i class="bi bi-plus-lg me-1"></i> Create Campaign</a>
+</div>
+
+<div class="mf-table-card">
+    <div class="table-responsive">
+        <table class="table mf-table mb-0 align-middle">
+            <thead>
+                <tr>
+                    <th>Campaign Name</th>
+                    <th>Recipients</th>
+                    <th>Sent</th>
+                    <th>Delivered</th>
+                    <th>Opened</th>
+                    <th>Clicked</th>
+                    <th>Bounced</th>
+                    <th>Status</th>
+                    <th>Created</th>
+                    <th class="text-end">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="mf-cell-strong">September Outreach</td>
+                    <td>125</td>
+                    <td>125</td>
+                    <td>120</td>
+                    <td>68</td>
+                    <td>25</td>
+                    <td>5</td>
+                    <td><span class="mf-badge mf-badge-success">Completed</span></td>
+                    <td>Sep 01, 2026</td>
+                    <td class="text-end">
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-bar-chart"></i></a>
+                        <button class="btn btn-sm btn-mf-outline text-danger" data-confirm-delete="September Outreach"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mf-cell-strong">Melbourne Leads</td>
+                    <td>340</td>
+                    <td>340</td>
+                    <td>328</td>
+                    <td>151</td>
+                    <td>44</td>
+                    <td>12</td>
+                    <td><span class="mf-badge mf-badge-success">Completed</span></td>
+                    <td>Aug 24, 2026</td>
+                    <td class="text-end">
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-bar-chart"></i></a>
+                        <button class="btn btn-sm btn-mf-outline text-danger" data-confirm-delete="Melbourne Leads"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mf-cell-strong">Product Introduction</td>
+                    <td>512</td>
+                    <td>210</td>
+                    <td>203</td>
+                    <td>76</td>
+                    <td>19</td>
+                    <td>3</td>
+                    <td><span class="mf-badge mf-badge-info">Sending</span></td>
+                    <td>Aug 20, 2026</td>
+                    <td class="text-end">
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-bar-chart"></i></a>
+                        <button class="btn btn-sm btn-mf-outline text-danger" data-confirm-delete="Product Introduction"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mf-cell-strong">August Follow-up</td>
+                    <td>198</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td><span class="mf-badge mf-badge-muted">Draft</span></td>
+                    <td>Aug 15, 2026</td>
+                    <td class="text-end">
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-pencil"></i></a>
+                        <button class="btn btn-sm btn-mf-outline text-danger" data-confirm-delete="August Follow-up"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mf-cell-strong">Diwali Offer Blast</td>
+                    <td>860</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td><span class="mf-badge mf-badge-warning">Scheduled</span></td>
+                    <td>Aug 10, 2026</td>
+                    <td class="text-end">
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-pencil"></i></a>
+                        <button class="btn btn-sm btn-mf-outline text-danger" data-confirm-delete="Diwali Offer Blast"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

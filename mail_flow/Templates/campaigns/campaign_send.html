@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Send Campaign · MailFlow{% endblock %}
+
+{% block content %}
+
+<div class="mf-page-header">
+    <div>
+        <p class="small mb-1"><a href="#"><i class="bi bi-arrow-left"></i> Back to Campaign</a></p>
+        <h1>Send Campaign</h1>
+        <p>Review everything before it goes out.</p>
+    </div>
+</div>
+
+<div class="mf-card p-4 mb-4" style="max-width: 640px;">
+    <dl class="row small mb-0">
+        <dt class="col-4 mf-muted fw-normal">Campaign</dt>
+        <dd class="col-8 mf-cell-strong">September Outreach</dd>
+
+        <dt class="col-4 mf-muted fw-normal">Recipients</dt>
+        <dd class="col-8 mf-cell-strong">125</dd>
+
+        <dt class="col-4 mf-muted fw-normal">Template</dt>
+        <dd class="col-8">Introduction Email</dd>
+
+        <dt class="col-4 mf-muted fw-normal">Subject</dt>
+        {% verbatim %}<dd class="col-8 mb-0">Hello {{first_name}}</dd>{% endverbatim %}
+    </dl>
+</div>
+
+<div class="alert d-flex align-items-start gap-2" style="max-width: 640px; background: var(--mf-warning-soft); border: 1px solid transparent; color: var(--mf-warning);">
+    <i class="bi bi-exclamation-triangle-fill mt-1"></i>
+    <div>Please verify your recipients and email content before sending. Campaigns cannot be recalled once sending begins.</div>
+</div>
+
+<form id="campaignSendForm" style="max-width: 640px;">
+    <div class="d-flex gap-2">
+        <a href="#" class="btn btn-mf-outline">Back</a>
+        <button type="submit" class="btn btn-mf-primary"><i class="bi bi-send me-1"></i> Send Campaign</button>
+    </div>
+</form>
+
+{% endblock %}

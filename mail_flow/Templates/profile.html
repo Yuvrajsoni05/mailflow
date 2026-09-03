@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Profile · MailFlow{% endblock %}
+
+{% block content %}
+
+<div class="mf-page-header">
+    <div>
+        <h1>Profile</h1>
+        <p>Manage your account details and password.</p>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-4">
+        <div class="mf-card p-4 text-center">
+            <div class="mf-avatar mx-auto mb-3">YS</div>
+            <h2 class="h6 mb-0">Yuvraj Soni</h2>
+            <p class="mf-muted small mb-3">ABC Technologies</p>
+            <button class="btn btn-mf-outline btn-sm w-100" type="button">
+                <i class="bi bi-camera me-1"></i> Change Photo
+            </button>
+        </div>
+    </div>
+
+    <div class="col-lg-8">
+        <form class="mf-card p-4 mb-4">
+            <h2 class="h6 mb-3">Personal Information</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label small">First Name</label>
+                    <input type="text" class="form-control" value="Yuvraj">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label small">Last Name</label>
+                    <input type="text" class="form-control" value="Soni">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label small">Email</label>
+                    <input type="email" class="form-control" value="yuvraj@example.com">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label small">Phone</label>
+                    <input type="tel" class="form-control" value="+91 98765 43210">
+                </div>
+                <div class="col-12">
+                    <label class="form-label small">Company</label>
+                    <input type="text" class="form-control" value="ABC Technologies">
+                </div>
+            </div>
+            <div class="mt-4 d-flex gap-2">
+                <button type="submit" class="btn btn-mf-primary">Update Profile</button>
+                <button type="button" class="btn btn-mf-outline">Cancel</button>
+            </div>
+        </form>
+
+        <form class="mf-card p-4">
+            <h2 class="h6 mb-3">Change Password</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label small">Current Password</label>
+                    <input type="password" class="form-control" placeholder="••••••••">
+                </div>
+                <div class="col-md-6"></div>
+                <div class="col-md-6">
+                    <label class="form-label small">New Password</label>
+                    <input type="password" class="form-control" placeholder="••••••••">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label small">Confirm New Password</label>
+                    <input type="password" class="form-control" placeholder="••••••••">
+                </div>
+            </div>
+            <div class="mt-4">
+                <button type="submit" class="btn btn-mf-primary">Change Password</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

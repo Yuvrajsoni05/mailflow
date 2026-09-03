@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Create Template · MailFlow{% endblock %}
+
+{% block content %}
+
+<div class="mf-page-header">
+    <div>
+        <p class="small mb-1"><a href="#"><i class="bi bi-arrow-left"></i> All Templates</a></p>
+        <h1>Create Template</h1>
+        <p>Write your email once, personalize it for every lead.</p>
+    </div>
+</div>
+
+<form>
+<div class="row g-4">
+    <div class="col-lg-7">
+        <div class="mf-card p-4 mb-4">
+            <div class="mb-3">
+                <label class="form-label small">Template Name</label>
+                <input type="text" class="form-control" placeholder="Introduction Email">
+            </div>
+            <div class="mb-3">
+                <label class="form-label small">Subject</label>
+                {% verbatim %}<input type="text" class="form-control" id="templateSubject" value="Hello {{first_name}}">{% endverbatim %}
+            </div>
+
+            <div class="mb-2 d-flex justify-content-between align-items-center">
+                <label class="form-label small mb-0">Available Variables</label>
+            </div>
+            <div class="d-flex flex-wrap gap-2 mb-3">
+                {% verbatim %}
+                <button type="button" class="mf-variable-chip border-0" data-insert-variable="{{first_name}}">Insert First Name</button>
+                <button type="button" class="mf-variable-chip border-0" data-insert-variable="{{last_name}}">Insert Last Name</button>
+                <button type="button" class="mf-variable-chip border-0" data-insert-variable="{{company}}">Insert Company</button>
+                <button type="button" class="mf-variable-chip border-0" data-insert-variable="{{email}}">Insert Email</button>
+                <button type="button" class="mf-variable-chip border-0" data-insert-variable="{{phone}}">Insert Phone</button>
+                {% endverbatim %}
+            </div>
+
+            <label class="form-label small">Email Body</label>
+            {% verbatim %}
+            <textarea class="form-control" id="emailBody" rows="10">Hi {{first_name}},
+
+I wanted to connect with you regarding {{company}}.
+
+Regards,
+Yuvraj</textarea>
+            {% endverbatim %}
+            <p class="small mf-muted mt-2 mb-0">Plain text only — this keeps templates simple and easy to move into Django later.</p>
+        </div>
+    </div>
+
+    <div class="col-lg-5">
+        <div class="mf-card p-4">
+            <h2 class="h6 mb-2">Email Preview</h2>
+            <p class="small mf-muted mb-3">Subject: <strong id="emailPreviewSubject" class="mf-cell-strong"></strong></p>
+            <div class="mf-email-preview" id="emailPreviewBody"></div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-4 d-flex gap-2">
+    <button type="submit" class="btn btn-mf-primary">Save Template</button>
+    <a href="#" class="btn btn-mf-outline">Cancel</a>
+</div>
+</form>
+
+{% endblock %}

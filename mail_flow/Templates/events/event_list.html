@@ -1,0 +1,212 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Email Events · MailFlow{% endblock %}
+
+{% block content %}
+
+<div class="mf-page-header">
+    <div>
+        <h1>Email Events</h1>
+        <p>Live delivery events received from Brevo webhooks.</p>
+    </div>
+</div>
+
+<!-- Filters -->
+<div class="mf-card p-3 mb-3">
+    <div class="row g-2 align-items-center">
+        <div class="col-6 col-md-3">
+            <select class="form-select">
+                <option selected>All Campaigns</option>
+                <option>September Outreach</option>
+                <option>Melbourne Leads</option>
+                <option>Product Introduction</option>
+            </select>
+        </div>
+        <div class="col-6 col-md-3">
+            <select class="form-select">
+                <option selected>All Event Types</option>
+                <option>Sent</option>
+                <option>Delivered</option>
+                <option>Opened</option>
+                <option>Clicked</option>
+                <option>Soft Bounce</option>
+                <option>Hard Bounce</option>
+                <option>Unsubscribed</option>
+            </select>
+        </div>
+        <div class="col-6 col-md-3">
+            <select class="form-select">
+                <option selected>All Leads</option>
+                <option>Yuvraj Soni</option>
+                <option>Rahul Patel</option>
+                <option>Amit Shah</option>
+            </select>
+        </div>
+        <div class="col-6 col-md-3">
+            <input type="date" class="form-control">
+        </div>
+    </div>
+</div>
+
+<div class="mf-table-card">
+    <div class="table-responsive">
+        <table class="table mf-table mb-0 align-middle">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Lead</th>
+                    <th>Email</th>
+                    <th>Campaign</th>
+                    <th>Event</th>
+                    <th>Message ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sep 01, 10:28 AM</td>
+                    <td class="mf-cell-strong">Yuvraj Soni</td>
+                    <td>yuvraj@example.com</td>
+                    <td>September Outreach</td>
+                    <td><span class="mf-badge mf-badge-primary">sent</span></td>
+                    <td class="mf-muted">msg_9f31ac02</td>
+                </tr>
+                <tr>
+                    <td>Sep 01, 10:29 AM</td>
+                    <td class="mf-cell-strong">Yuvraj Soni</td>
+                    <td>yuvraj@example.com</td>
+                    <td>September Outreach</td>
+                    <td><span class="mf-badge mf-badge-info">delivered</span></td>
+                    <td class="mf-muted">msg_9f31ac02</td>
+                </tr>
+                <tr>
+                    <td>Sep 01, 10:30 AM</td>
+                    <td class="mf-cell-strong">Yuvraj Soni</td>
+                    <td>yuvraj@example.com</td>
+                    <td>September Outreach</td>
+                    <td><span class="mf-badge mf-badge-success">opened</span></td>
+                    <td class="mf-muted">msg_9f31ac02</td>
+                </tr>
+                <tr>
+                    <td>Sep 01, 10:32 AM</td>
+                    <td class="mf-cell-strong">Yuvraj Soni</td>
+                    <td>yuvraj@example.com</td>
+                    <td>September Outreach</td>
+                    <td><span class="mf-badge mf-badge-success">clicked</span></td>
+                    <td class="mf-muted">msg_9f31ac02</td>
+                </tr>
+                <tr>
+                    <td>Sep 01, 10:33 AM</td>
+                    <td class="mf-cell-strong">Rahul Patel</td>
+                    <td>rahul@example.com</td>
+                    <td>September Outreach</td>
+                    <td><span class="mf-badge mf-badge-primary">sent</span></td>
+                    <td class="mf-muted">msg_2b77f110</td>
+                </tr>
+                <tr>
+                    <td>Sep 01, 10:35 AM</td>
+                    <td class="mf-cell-strong">Rahul Patel</td>
+                    <td>rahul@example.com</td>
+                    <td>September Outreach</td>
+                    <td><span class="mf-badge mf-badge-info">delivered</span></td>
+                    <td class="mf-muted">msg_2b77f110</td>
+                </tr>
+                <tr>
+                    <td>Sep 01, 11:02 AM</td>
+                    <td class="mf-cell-strong">Rahul Patel</td>
+                    <td>rahul@example.com</td>
+                    <td>September Outreach</td>
+                    <td><span class="mf-badge mf-badge-success">opened</span></td>
+                    <td class="mf-muted">msg_2b77f110</td>
+                </tr>
+                <tr>
+                    <td>Sep 01, 09:58 AM</td>
+                    <td class="mf-cell-strong">Amit Shah</td>
+                    <td>amit@example.com</td>
+                    <td>September Outreach</td>
+                    <td><span class="mf-badge mf-badge-primary">sent</span></td>
+                    <td class="mf-muted">msg_774ce9a1</td>
+                </tr>
+                <tr>
+                    <td>Sep 01, 09:59 AM</td>
+                    <td class="mf-cell-strong">Amit Shah</td>
+                    <td>amit@example.com</td>
+                    <td>September Outreach</td>
+                    <td><span class="mf-badge mf-badge-info">delivered</span></td>
+                    <td class="mf-muted">msg_774ce9a1</td>
+                </tr>
+                <tr>
+                    <td>Sep 01, 09:55 AM</td>
+                    <td class="mf-cell-strong">Priya Shah</td>
+                    <td>priya@example.com</td>
+                    <td>September Outreach</td>
+                    <td><span class="mf-badge mf-badge-primary">sent</span></td>
+                    <td class="mf-muted">msg_0ad51e3f</td>
+                </tr>
+                <tr>
+                    <td>Sep 01, 09:56 AM</td>
+                    <td class="mf-cell-strong">Priya Shah</td>
+                    <td>priya@example.com</td>
+                    <td>September Outreach</td>
+                    <td><span class="mf-badge mf-badge-danger">hard_bounce</span></td>
+                    <td class="mf-muted">msg_0ad51e3f</td>
+                </tr>
+                <tr>
+                    <td>Aug 24, 03:12 PM</td>
+                    <td class="mf-cell-strong">Sneha Mehta</td>
+                    <td>sneha@example.com</td>
+                    <td>Melbourne Leads</td>
+                    <td><span class="mf-badge mf-badge-primary">sent</span></td>
+                    <td class="mf-muted">msg_45c8b7d2</td>
+                </tr>
+                <tr>
+                    <td>Aug 24, 03:14 PM</td>
+                    <td class="mf-cell-strong">Sneha Mehta</td>
+                    <td>sneha@example.com</td>
+                    <td>Melbourne Leads</td>
+                    <td><span class="mf-badge mf-badge-warning">soft_bounce</span></td>
+                    <td class="mf-muted">msg_45c8b7d2</td>
+                </tr>
+                <tr>
+                    <td>Aug 24, 04:01 PM</td>
+                    <td class="mf-cell-strong">Karan Malhotra</td>
+                    <td>karan@example.com</td>
+                    <td>Melbourne Leads</td>
+                    <td><span class="mf-badge mf-badge-success">opened</span></td>
+                    <td class="mf-muted">msg_7710dfae</td>
+                </tr>
+                <tr>
+                    <td>Aug 24, 04:20 PM</td>
+                    <td class="mf-cell-strong">Karan Malhotra</td>
+                    <td>karan@example.com</td>
+                    <td>Melbourne Leads</td>
+                    <td><span class="mf-badge mf-badge-muted">unsubscribed</span></td>
+                    <td class="mf-muted">msg_7710dfae</td>
+                </tr>
+                <tr>
+                    <td>Aug 20, 01:44 PM</td>
+                    <td class="mf-cell-strong">Vikram Rao</td>
+                    <td>vikram@example.com</td>
+                    <td>Product Introduction</td>
+                    <td><span class="mf-badge mf-badge-primary">sent</span></td>
+                    <td class="mf-muted">msg_c1029b6e</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center p-3 border-top">
+        <div class="small mf-muted">Showing 1–15 of 8,420 events</div>
+        <nav>
+            <ul class="pagination pagination-sm mb-0">
+                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+{% endblock %}

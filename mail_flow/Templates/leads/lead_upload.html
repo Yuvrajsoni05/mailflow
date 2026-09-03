@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Upload Leads · MailFlow{% endblock %}
+
+{% block content %}
+
+<div class="mf-page-header">
+    <div>
+        <p class="small mb-1"><a href="#"><i class="bi bi-arrow-left"></i> All Leads</a></p>
+        <h1>Upload Leads</h1>
+        <p>Import leads in bulk from a CSV file.</p>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-7">
+        <div class="mf-card p-4">
+            <form>
+                <div class="mf-upload-drop mb-3">
+                    <i class="bi bi-cloud-arrow-up mb-2" style="font-size: 2rem; color: var(--mf-primary);"></i>
+                    <p class="mb-2 mf-cell-strong">Drop your CSV file here, or</p>
+                    <label class="btn btn-mf-outline btn-sm mb-0" for="csvFileInput">Choose CSV File</label>
+                    <input type="file" id="csvFileInput" accept=".csv" class="d-none">
+                    <p class="small mf-muted mt-2 mb-0">Supported format: CSV · Max 5 MB</p>
+                    <p class="small mb-0" id="csvFileName"></p>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <a href="#" class="small"><i class="bi bi-download me-1"></i> Download Sample CSV</a>
+                </div>
+
+                <div class="mt-4 d-flex gap-2">
+                    <button type="submit" class="btn btn-mf-primary">Upload Leads</button>
+                    <a href="#" class="btn btn-mf-outline">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-lg-5">
+        <div class="mf-card p-4 h-100">
+            <h2 class="h6 mb-2">CSV Format</h2>
+            <p class="small mf-muted">Your file should include these columns, in any order:</p>
+            <ul class="small mb-0">
+                <li>Name</li>
+                <li>Email</li>
+                <li>Company</li>
+                <li>Phone</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="mf-table-card mt-4">
+    <div class="p-3 border-bottom d-flex justify-content-between align-items-center">
+        <h2 class="h6 mb-0">Preview</h2>
+        <span class="small mf-muted">First 5 rows shown</span>
+    </div>
+    <div class="table-responsive p-3">
+        <div id="csvPreviewWrap" class="d-none"></div>
+        <table class="table mf-table mb-0" id="csvPreviewDefault">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Company</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Yuvraj Soni</td>
+                    <td>yuvraj@example.com</td>
+                    <td>ABC Technologies</td>
+                    <td>+91 98765 43210</td>
+                </tr>
+                <tr>
+                    <td>Rahul Patel</td>
+                    <td>rahul@example.com</td>
+                    <td>XYZ Solutions</td>
+                    <td>+91 98111 22334</td>
+                </tr>
+                <tr>
+                    <td>Amit Shah</td>
+                    <td>amit@example.com</td>
+                    <td>BrightWave Media</td>
+                    <td>+91 90000 11223</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="small mf-muted mb-0">Choose a CSV file above to preview your own data here.</p>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Create Campaign · MailFlow{% endblock %}
+
+{% block content %}
+
+<div class="mf-page-header">
+    <div>
+        <p class="small mb-1"><a href="#"><i class="bi bi-arrow-left"></i> All Campaigns</a></p>
+        <h1>Create Campaign</h1>
+        <p>Name your campaign, choose a template, and pick your recipients.</p>
+    </div>
+</div>
+
+<form>
+{% verbatim %}
+<div class="row g-4">
+    <div class="col-lg-7">
+        <div class="mf-card p-4 mb-4">
+            <h2 class="h6 mb-3">Campaign Details</h2>
+            <div class="row g-3">
+                <div class="col-12">
+                    <label class="form-label small">Campaign Name</label>
+                    <input type="text" class="form-control" placeholder="October Product Update">
+                </div>
+                <div class="col-12">
+                    <label class="form-label small">Email Subject</label>
+                    <input type="text" class="form-control" id="templateSubject" value="Hello {{first_name}}">
+                </div>
+                <div class="col-12">
+                    <label class="form-label small">Select Email Template</label>
+                    <select class="form-select">
+                        <option selected>Introduction Email</option>
+                        <option>Product Launch Announcement</option>
+                        <option>Monthly Newsletter</option>
+                        <option>Re-engagement Email</option>
+                        <option>Event Invitation</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="mf-card p-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="h6 mb-0">Select Leads</h2>
+                <span class="small mf-muted">Selected: <span data-select-count="campaignLeads">0</span> Leads</span>
+            </div>
+            <div class="form-check mb-2 pb-2 border-bottom">
+                <input class="form-check-input" type="checkbox" id="selectAllLeads" data-select-all="campaignLeads">
+                <label class="form-check-label small fw-semibold" for="selectAllLeads">Select All</label>
+            </div>
+            <div class="row g-2">
+                <div class="col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" data-select-item="campaignLeads" id="l1" checked>
+                        <label class="form-check-label small" for="l1">Yuvraj Soni — ABC Technologies</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" data-select-item="campaignLeads" id="l2" checked>
+                        <label class="form-check-label small" for="l2">Rahul Patel — XYZ Solutions</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" data-select-item="campaignLeads" id="l3" checked>
+                        <label class="form-check-label small" for="l3">Amit Shah — BrightWave Media</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" data-select-item="campaignLeads" id="l4">
+                        <label class="form-check-label small" for="l4">Priya Shah — Nimbus Cloud Services</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" data-select-item="campaignLeads" id="l5">
+                        <label class="form-check-label small" for="l5">Sneha Mehta — Orbit Retail Group</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" data-select-item="campaignLeads" id="l6">
+                        <label class="form-check-label small" for="l6">Karan Malhotra — Skyline Logistics</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-5">
+        <div class="mf-card p-4 mb-3">
+            <h2 class="h6 mb-2">Email Preview</h2>
+            <p class="small mf-muted mb-3">Subject: <strong id="emailPreviewSubject" class="mf-cell-strong"></strong></p>
+            <div class="mf-email-preview" id="emailPreviewBody"></div>
+        </div>
+
+        <div class="mf-card p-4">
+            <h2 class="h6 mb-2">Available Variables</h2>
+            <p class="small mf-muted mb-2">Reference these in your template body.</p>
+            <div class="d-flex flex-wrap gap-2">
+                <span class="mf-variable-chip">{{first_name}}</span>
+                <span class="mf-variable-chip">{{last_name}}</span>
+                <span class="mf-variable-chip">{{email}}</span>
+                <span class="mf-variable-chip">{{company}}</span>
+                <span class="mf-variable-chip">{{phone}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hidden textarea so the shared preview JS module can render the sample email body -->
+<textarea id="emailBody" class="d-none">Hi {{first_name}},
+
+I wanted to connect with you regarding {{company}}.
+
+Regards,
+Yuvraj</textarea>
+{% endverbatim %}
+
+<div class="mt-4 d-flex gap-2">
+    <button type="submit" class="btn btn-mf-primary">Save Campaign</button>
+    <a href="#" class="btn btn-mf-outline">Cancel</a>
+</div>
+</form>
+
+{% endblock %}

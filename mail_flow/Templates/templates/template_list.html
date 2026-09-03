@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Email Templates · MailFlow{% endblock %}
+
+{% block content %}
+
+<div class="mf-page-header">
+    <div>
+        <h1>Email Templates</h1>
+        <p>5 templates ready to use in your campaigns.</p>
+    </div>
+    <a href="#" class="btn btn-mf-primary btn-sm"><i class="bi bi-plus-lg me-1"></i> Create Template</a>
+</div>
+
+<div class="mf-table-card">
+    <div class="table-responsive">
+        <table class="table mf-table mb-0 align-middle">
+            <thead>
+                <tr>
+                    <th>Template Name</th>
+                    <th>Subject</th>
+                    <th>Created</th>
+                    <th>Updated</th>
+                    <th class="text-end">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="mf-cell-strong">Introduction Email</td>
+                    <td class="mf-muted">{% verbatim %}Hello, {{first_name}}{% endverbatim %}</td>
+                    <td>Jul 02, 2026</td>
+                    <td>Aug 28, 2026</td>
+                    <td class="text-end">
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-eye"></i></a>
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-pencil"></i></a>
+                        <button class="btn btn-sm btn-mf-outline text-danger" data-confirm-delete="Introduction Email"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mf-cell-strong">Product Launch Announcement</td>
+                    <td class="mf-muted">Introducing our newest feature</td>
+                    <td>Jul 10, 2026</td>
+                    <td>Aug 20, 2026</td>
+                    <td class="text-end">
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-eye"></i></a>
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-pencil"></i></a>
+                        <button class="btn btn-sm btn-mf-outline text-danger" data-confirm-delete="Product Launch Announcement"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mf-cell-strong">Monthly Newsletter</td>
+                    <td class="mf-muted">Your MailFlow monthly digest</td>
+                    <td>Jul 18, 2026</td>
+                    <td>Aug 15, 2026</td>
+                    <td class="text-end">
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-eye"></i></a>
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-pencil"></i></a>
+                        <button class="btn btn-sm btn-mf-outline text-danger" data-confirm-delete="Monthly Newsletter"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mf-cell-strong">Re-engagement Email</td>
+                    <td class="mf-muted">{% verbatim %}We miss you at {{company}}{% endverbatim %}</td>
+                    <td>Jul 25, 2026</td>
+                    <td>Aug 05, 2026</td>
+                    <td class="text-end">
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-eye"></i></a>
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-pencil"></i></a>
+                        <button class="btn btn-sm btn-mf-outline text-danger" data-confirm-delete="Re-engagement Email"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mf-cell-strong">Event Invitation</td>
+                    <td class="mf-muted">You're invited: MailFlow Summit 2026</td>
+                    <td>Aug 01, 2026</td>
+                    <td>Aug 01, 2026</td>
+                    <td class="text-end">
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-eye"></i></a>
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-pencil"></i></a>
+                        <button class="btn btn-sm btn-mf-outline text-danger" data-confirm-delete="Event Invitation"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

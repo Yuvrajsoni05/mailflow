@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Add Lead · MailFlow{% endblock %}
+
+{% block content %}
+
+<div class="mf-page-header">
+    <div>
+        <p class="small mb-1"><a href="#"><i class="bi bi-arrow-left"></i> All Leads</a></p>
+        <h1>Add Lead</h1>
+        <p>Add a single lead manually.</p>
+    </div>
+</div>
+
+<div class="mf-card p-4" style="max-width: 640px;">
+    <form>
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label class="form-label small">First Name</label>
+                <input type="text" class="form-control" placeholder="Yuvraj">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label small">Last Name</label>
+                <input type="text" class="form-control" placeholder="Soni">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label small">Email</label>
+                <input type="email" class="form-control" placeholder="yuvraj@example.com">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label small">Phone</label>
+                <input type="tel" class="form-control" placeholder="+91 98765 43210">
+            </div>
+            <div class="col-12">
+                <label class="form-label small">Company</label>
+                <input type="text" class="form-control" placeholder="ABC Technologies">
+            </div>
+        </div>
+
+        <div class="mt-4 d-flex gap-2">
+            <button type="submit" class="btn btn-mf-primary">Save Lead</button>
+            <a href="#" class="btn btn-mf-outline">Cancel</a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

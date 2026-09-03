@@ -1,0 +1,234 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Leads · MailFlow{% endblock %}
+
+{% block content %}
+
+<div class="mf-page-header">
+    <div>
+        <h1>Leads</h1>
+        <p>1,250 total leads across all sources.</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a href="#" class="btn btn-mf-outline btn-sm"><i class="bi bi-cloud-upload me-1"></i> Upload Leads</a>
+        <a href="#" class="btn btn-mf-primary btn-sm"><i class="bi bi-person-plus me-1"></i> Add Lead</a>
+    </div>
+</div>
+
+<!-- Filters -->
+<div class="mf-card p-3 mb-3">
+    <div class="row g-2 align-items-center">
+        <div class="col-md-4">
+            <div class="input-group">
+                <span class="input-group-text bg-white"><i class="bi bi-search text-muted"></i></span>
+                <input type="search" class="form-control" placeholder="Search by name or email">
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <select class="form-select">
+                <option selected>All Statuses</option>
+                <option>Active</option>
+                <option>New</option>
+                <option>Unsubscribed</option>
+                <option>Inactive</option>
+            </select>
+        </div>
+        <div class="col-6 col-md-3">
+            <select class="form-select">
+                <option selected>All Companies</option>
+                <option>ABC Technologies</option>
+                <option>XYZ Solutions</option>
+                <option>BrightWave Media</option>
+                <option>Nimbus Cloud Services</option>
+            </select>
+        </div>
+        <div class="col-md-2 text-md-end">
+            <button class="btn btn-mf-outline w-100 w-md-auto"><i class="bi bi-funnel me-1"></i> Filter</button>
+        </div>
+    </div>
+</div>
+
+<!-- Table -->
+<div class="mf-table-card">
+    <div class="d-flex justify-content-between align-items-center p-3 border-bottom">
+        <div class="small mf-muted">Selected: <span data-select-count="leads">0</span> leads</div>
+        <div class="d-flex gap-2">
+            <button class="btn btn-mf-outline btn-sm" data-confirm-delete="the selected leads"><i class="bi bi-trash me-1"></i> Delete Selected</button>
+            <button class="btn btn-mf-outline btn-sm"><i class="bi bi-download me-1"></i> Export</button>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table mf-table mb-0 align-middle">
+            <thead>
+                <tr>
+                    <th style="width: 36px;"><input type="checkbox" class="form-check-input" data-select-all="leads"></th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Company</th>
+                    <th>Phone</th>
+                    <th>Status</th>
+                    <th>Created</th>
+                    <th class="text-end">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" class="form-check-input" data-select-item="leads"></td>
+                    <td class="mf-cell-strong">Yuvraj Soni</td>
+                    <td>yuvraj@example.com</td>
+                    <td>ABC Technologies</td>
+                    <td>+91 98765 43210</td>
+                    <td><span class="mf-badge mf-badge-success">Active</span></td>
+                    <td>Aug 12, 2026</td>
+                    <td class="text-end">
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-eye"></i></a>
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-pencil"></i></a>
+                        <button class="btn btn-sm btn-mf-outline text-danger" data-confirm-delete="Yuvraj Soni"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="form-check-input" data-select-item="leads"></td>
+                    <td class="mf-cell-strong">Rahul Patel</td>
+                    <td>rahul@example.com</td>
+                    <td>XYZ Solutions</td>
+                    <td>+91 98111 22334</td>
+                    <td><span class="mf-badge mf-badge-success">Active</span></td>
+                    <td>Aug 10, 2026</td>
+                    <td class="text-end">
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-eye"></i></a>
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-pencil"></i></a>
+                        <button class="btn btn-sm btn-mf-outline text-danger" data-confirm-delete="Rahul Patel"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="form-check-input" data-select-item="leads"></td>
+                    <td class="mf-cell-strong">Amit Shah</td>
+                    <td>amit@example.com</td>
+                    <td>BrightWave Media</td>
+                    <td>+91 90000 11223</td>
+                    <td><span class="mf-badge mf-badge-success">Active</span></td>
+                    <td>Aug 09, 2026</td>
+                    <td class="text-end">
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-eye"></i></a>
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-pencil"></i></a>
+                        <button class="btn btn-sm btn-mf-outline text-danger" data-confirm-delete="Amit Shah"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="form-check-input" data-select-item="leads"></td>
+                    <td class="mf-cell-strong">Priya Shah</td>
+                    <td>priya@example.com</td>
+                    <td>Nimbus Cloud Services</td>
+                    <td>+91 91234 56789</td>
+                    <td><span class="mf-badge mf-badge-danger">Bounced</span></td>
+                    <td>Aug 08, 2026</td>
+                    <td class="text-end">
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-eye"></i></a>
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-pencil"></i></a>
+                        <button class="btn btn-sm btn-mf-outline text-danger" data-confirm-delete="Priya Shah"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="form-check-input" data-select-item="leads"></td>
+                    <td class="mf-cell-strong">Sneha Mehta</td>
+                    <td>sneha@example.com</td>
+                    <td>Orbit Retail Group</td>
+                    <td>+91 99887 76655</td>
+                    <td><span class="mf-badge mf-badge-success">Active</span></td>
+                    <td>Aug 06, 2026</td>
+                    <td class="text-end">
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-eye"></i></a>
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-pencil"></i></a>
+                        <button class="btn btn-sm btn-mf-outline text-danger" data-confirm-delete="Sneha Mehta"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="form-check-input" data-select-item="leads"></td>
+                    <td class="mf-cell-strong">Karan Malhotra</td>
+                    <td>karan@example.com</td>
+                    <td>Skyline Logistics</td>
+                    <td>+91 98700 12345</td>
+                    <td><span class="mf-badge mf-badge-muted">New</span></td>
+                    <td>Aug 05, 2026</td>
+                    <td class="text-end">
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-eye"></i></a>
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-pencil"></i></a>
+                        <button class="btn btn-sm btn-mf-outline text-danger" data-confirm-delete="Karan Malhotra"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="form-check-input" data-select-item="leads"></td>
+                    <td class="mf-cell-strong">Neha Kapoor</td>
+                    <td>neha@example.com</td>
+                    <td>Quantum Analytics</td>
+                    <td>+91 93456 78901</td>
+                    <td><span class="mf-badge mf-badge-success">Active</span></td>
+                    <td>Aug 03, 2026</td>
+                    <td class="text-end">
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-eye"></i></a>
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-pencil"></i></a>
+                        <button class="btn btn-sm btn-mf-outline text-danger" data-confirm-delete="Neha Kapoor"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="form-check-input" data-select-item="leads"></td>
+                    <td class="mf-cell-strong">Vikram Rao</td>
+                    <td>vikram@example.com</td>
+                    <td>Coral Health Systems</td>
+                    <td>+91 90011 22334</td>
+                    <td><span class="mf-badge mf-badge-warning">Unsubscribed</span></td>
+                    <td>Jul 30, 2026</td>
+                    <td class="text-end">
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-eye"></i></a>
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-pencil"></i></a>
+                        <button class="btn btn-sm btn-mf-outline text-danger" data-confirm-delete="Vikram Rao"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="form-check-input" data-select-item="leads"></td>
+                    <td class="mf-cell-strong">Ananya Iyer</td>
+                    <td>ananya@example.com</td>
+                    <td>Vertex Manufacturing</td>
+                    <td>+91 98989 12121</td>
+                    <td><span class="mf-badge mf-badge-success">Active</span></td>
+                    <td>Jul 28, 2026</td>
+                    <td class="text-end">
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-eye"></i></a>
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-pencil"></i></a>
+                        <button class="btn btn-sm btn-mf-outline text-danger" data-confirm-delete="Ananya Iyer"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="form-check-input" data-select-item="leads"></td>
+                    <td class="mf-cell-strong">Rohan Desai</td>
+                    <td>rohan@example.com</td>
+                    <td>Meridian Consulting</td>
+                    <td>+91 97654 32109</td>
+                    <td><span class="mf-badge mf-badge-muted">New</span></td>
+                    <td>Jul 25, 2026</td>
+                    <td class="text-end">
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-eye"></i></a>
+                        <a href="#" class="btn btn-sm btn-mf-outline"><i class="bi bi-pencil"></i></a>
+                        <button class="btn btn-sm btn-mf-outline text-danger" data-confirm-delete="Rohan Desai"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center p-3 border-top">
+        <div class="small mf-muted">Showing 1–10 of 1,250 leads</div>
+        <nav>
+            <ul class="pagination pagination-sm mb-0">
+                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+{% endblock %}

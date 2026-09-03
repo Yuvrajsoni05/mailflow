@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}September Outreach · Campaigns · MailFlow{% endblock %}
+
+{% block content %}
+
+<div class="mf-page-header">
+    <div>
+        <p class="small mb-1"><a href="#"><i class="bi bi-arrow-left"></i> All Campaigns</a></p>
+        <h1>September Outreach</h1>
+        <p>Status: <span class="mf-badge mf-badge-success">Completed</span> · Sent Sep 01, 2026</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a href="#" class="btn btn-mf-outline btn-sm"><i class="bi bi-download me-1"></i> Export Report</a>
+    </div>
+</div>
+
+<!-- Stats -->
+<div class="row g-3 mb-4">
+    <div class="col-6 col-lg-2">
+        <div class="mf-stat-card">
+            <div class="mf-stat-label">Total Recipients</div>
+            <div class="mf-stat-value">125</div>
+        </div>
+    </div>
+    <div class="col-6 col-lg-2">
+        <div class="mf-stat-card">
+            <div class="mf-stat-label">Sent</div>
+            <div class="mf-stat-value">125</div>
+        </div>
+    </div>
+    <div class="col-6 col-lg-2">
+        <div class="mf-stat-card">
+            <div class="mf-stat-label">Delivered</div>
+            <div class="mf-stat-value">120</div>
+        </div>
+    </div>
+    <div class="col-6 col-lg-2">
+        <div class="mf-stat-card">
+            <div class="mf-stat-label">Opened</div>
+            <div class="mf-stat-value">68</div>
+        </div>
+    </div>
+    <div class="col-6 col-lg-2">
+        <div class="mf-stat-card">
+            <div class="mf-stat-label">Clicked</div>
+            <div class="mf-stat-value">25</div>
+        </div>
+    </div>
+    <div class="col-6 col-lg-2">
+        <div class="mf-stat-card">
+            <div class="mf-stat-label">Bounced</div>
+            <div class="mf-stat-value">5</div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-md-6">
+        <div class="mf-card p-4 d-flex justify-content-between align-items-center">
+            <div>
+                <div class="mf-stat-label">Open Rate</div>
+                <div class="mf-stat-value">56.6%</div>
+            </div>
+            <div style="width: 90px;">
+                <div class="progress" style="height: 8px;">
+                    <div class="progress-bar" role="progressbar" style="width: 56.6%; background: var(--mf-info);"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="mf-card p-4 d-flex justify-content-between align-items-center">
+            <div>
+                <div class="mf-stat-label">Click Rate</div>
+                <div class="mf-stat-value">20.8%</div>
+            </div>
+            <div style="width: 90px;">
+                <div class="progress" style="height: 8px;">
+                    <div class="progress-bar" role="progressbar" style="width: 20.8%; background: var(--mf-success);"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Recipient status -->
+<div class="mf-table-card">
+    <div class="p-3 border-bottom d-flex justify-content-between align-items-center">
+        <h2 class="h6 mb-0">Recipient Status</h2>
+        <input type="search" class="form-control form-control-sm" style="width: 220px;" placeholder="Search recipients">
+    </div>
+    <div class="table-responsive">
+        <table class="table mf-table mb-0 align-middle">
+            <thead>
+                <tr>
+                    <th>Lead</th>
+                    <th>Email</th>
+                    <th>Sent</th>
+                    <th>Delivered</th>
+                    <th>Opened</th>
+                    <th>Clicked</th>
+                    <th>Bounced</th>
+                    <th>Current Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="mf-cell-strong">Yuvraj Soni</td>
+                    <td>yuvraj@example.com</td>
+                    <td><i class="bi bi-check-lg text-success"></i></td>
+                    <td><i class="bi bi-check-lg text-success"></i></td>
+                    <td><i class="bi bi-check-lg text-success"></i></td>
+                    <td><i class="bi bi-check-lg text-success"></i></td>
+                    <td><i class="bi bi-dash mf-muted"></i></td>
+                    <td><span class="mf-badge mf-badge-success">Clicked</span></td>
+                </tr>
+                <tr>
+                    <td class="mf-cell-strong">Rahul Patel</td>
+                    <td>rahul@example.com</td>
+                    <td><i class="bi bi-check-lg text-success"></i></td>
+                    <td><i class="bi bi-check-lg text-success"></i></td>
+                    <td><i class="bi bi-check-lg text-success"></i></td>
+                    <td><i class="bi bi-dash mf-muted"></i></td>
+                    <td><i class="bi bi-dash mf-muted"></i></td>
+                    <td><span class="mf-badge mf-badge-info">Opened</span></td>
+                </tr>
+                <tr>
+                    <td class="mf-cell-strong">Amit Shah</td>
+                    <td>amit@example.com</td>
+                    <td><i class="bi bi-check-lg text-success"></i></td>
+                    <td><i class="bi bi-check-lg text-success"></i></td>
+                    <td><i class="bi bi-dash mf-muted"></i></td>
+                    <td><i class="bi bi-dash mf-muted"></i></td>
+                    <td><i class="bi bi-dash mf-muted"></i></td>
+                    <td><span class="mf-badge mf-badge-primary">Delivered</span></td>
+                </tr>
+                <tr>
+                    <td class="mf-cell-strong">Priya Shah</td>
+                    <td>priya@example.com</td>
+                    <td><i class="bi bi-check-lg text-success"></i></td>
+                    <td><i class="bi bi-dash mf-muted"></i></td>
+                    <td><i class="bi bi-dash mf-muted"></i></td>
+                    <td><i class="bi bi-dash mf-muted"></i></td>
+                    <td><i class="bi bi-check-lg text-danger"></i></td>
+                    <td><span class="mf-badge mf-badge-danger">Bounced</span></td>
+                </tr>
+                <tr>
+                    <td class="mf-cell-strong">Sneha Mehta</td>
+                    <td>sneha@example.com</td>
+                    <td><i class="bi bi-check-lg text-success"></i></td>
+                    <td><i class="bi bi-check-lg text-success"></i></td>
+                    <td><i class="bi bi-check-lg text-success"></i></td>
+                    <td><i class="bi bi-check-lg text-success"></i></td>
+                    <td><i class="bi bi-dash mf-muted"></i></td>
+                    <td><span class="mf-badge mf-badge-success">Clicked</span></td>
+                </tr>
+                <tr>
+                    <td class="mf-cell-strong">Karan Malhotra</td>
+                    <td>karan@example.com</td>
+                    <td><i class="bi bi-check-lg text-success"></i></td>
+                    <td><i class="bi bi-check-lg text-success"></i></td>
+                    <td><i class="bi bi-dash mf-muted"></i></td>
+                    <td><i class="bi bi-dash mf-muted"></i></td>
+                    <td><i class="bi bi-dash mf-muted"></i></td>
+                    <td><span class="mf-badge mf-badge-primary">Delivered</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="d-flex justify-content-between align-items-center p-3 border-top">
+        <div class="small mf-muted">Showing 1–6 of 125 recipients</div>
+        <nav>
+            <ul class="pagination pagination-sm mb-0">
+                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+{% endblock %}
