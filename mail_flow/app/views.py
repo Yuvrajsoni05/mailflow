@@ -11,3 +11,7 @@ def dashboard(request):
     return render(request, 'dashboard.html')
 
 
+def create_template(request):
+    return render(request, 'templates/template_create.html')
+
+def template_list(request):
